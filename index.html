@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="../lib/three.min.js"></script>
+    <style type="text/css">
+		.auto-style-pantalla {
+            width: 100%;
+        }
+        .auto-style-animacion {
+			vertical-align:top;
+			background-color:#8B8484;
+            width: 65%;
+        }
+		.auto-style1 {
+            text-align: center;
+			width:20%;
+        }
+		.auto-btn {
+		  background: #34c6d9;
+		  background-image: -webkit-linear-gradient(top, #34c6d9, #1f7bb5);
+		  background-image: -moz-linear-gradient(top, #34c6d9, #1f7bb5);
+		  background-image: -ms-linear-gradient(top, #34c6d9, #1f7bb5);
+		  background-image: -o-linear-gradient(top, #34c6d9, #1f7bb5);
+		  background-image: linear-gradient(to bottom, #34c6d9, #1f7bb5);
+		  -webkit-border-radius: 12;
+		  -moz-border-radius: 12;
+		  border-radius: 12px;
+		  font-family: Arial;
+		  color: #ffffff;
+		  font-size: 17px;
+		  padding: 10px 20px 10px 20px;
+		  border: solid #18a5b8 3px;
+		  text-decoration: none;
+		}
+		.myButton {
+		-moz-box-shadow:inset 0px 39px 0px -24px #54a3f7;
+		-webkit-box-shadow:inset 0px 39px 0px -24px #54a3f7;
+		box-shadow:inset 0px 39px 0px -24px #54a3f7;
+		background-color:#007dc1;
+		-moz-border-radius:4px;
+		-webkit-border-radius:4px;
+		border-radius:4px;
+		border:1px solid #124d77;
+		display:inline-block;
+		cursor:pointer;
+		color:#ffffff;
+		font-family:Arial;
+		font-size:15px;
+		padding:6px 15px;
+		text-decoration:none;
+		text-shadow:0px 1px 0px #154682;
+		}
+		.myButton:hover {
+			background-color:#0061a7;
+		}
+		.myButton:active {
+			position:relative;
+			top:1px;
+		}
+	</style>
+<script src="script/main.js"></script>
+
+<script type="text/javascript">
+
+function empezar(){
+var gra=document.getElementById('gravedad').value;
+var vel=document.getElementById('velocidad').value;
+var tie=document.getElementById('tiempo').value;
+    //var reloj=document.getElementById('tiempo').value;
+sessionStorage.setItem(gravedad,gra); //ó sessionStorage[producto]=precio
+sessionStorage.setItem(velocidad,vel);
+sessionStorage.setItem(tiempo,tie);
+var datosDisponibles=document.getElementById('canvas');
+   //datosDisponibles.innerHTML =  '<canvas>'+Main_js(vel, gra, tie)+'</canvas>';
+Main_js(vel, gra, tie);
+} 
+</script>
+        
+</head>
+<body>
+
+<table class="auto-style-pantalla"  >
+  <tr bgcolor="#0D61E1">
+    <td class="auto-style1"><strong>CORDENADAS(X)</strong></td>
+    <td class="auto-style1"><strong>TIEMPO</strong></td>
+    <td class="auto-style1"><strong>VELOCIDAD</strong></td>
+    <td class="auto-style1"><strong>GRAVEDAD</strong></td>
+    <td class="auto-style1"><strong>SIMULAR</strong></td>
+  </tr>          
+  <tr bgcolor="#DEE31F">
+    <td class="auto-style1"><input type="text" disabled id="cordenada" /> m</td>
+    <td class="auto-style1"><input id="tiempo" type="text" /> s</td>
+    <td class="auto-style1"><input type="text" id="velocidad" maxlength="5"/> m/s</td>
+    <td class="auto-style1"><input id="gravedad" type="text" value="9.8"/> m/s&#178 </td>
+    <td class="auto-style1"><input id="EMPEZAR" onclick="empezar()" class="myButton" type="button" value="EMPEZAR"/></td>
+  </tr>
+</table>
+<!-- <canvas id="canvas" class="auto-style-animacion"></canvas>-->
+</body>
+</html>
